@@ -1,15 +1,11 @@
-import LoginPage from  '../pageobjects/login.page';
-import SecurePage from '../pageobjects/secure.page';
+import { PageObject } from "../pageobjects/pageObject";
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await LoginPage.open();
+describe("FBN landing page", () => {
+  const landingPage = new PageObject();
 
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        await expect(SecurePage.flashAlert).toBeExisting();
-        await expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!');
-    });
+  it("Should verify that all expected elements are displayed", async () => {
+    browser.url("https://www.fbn.com/");
+    await landingPage.featuredProductsHeader.waitForDisplayed();
+    expect(await landingPage.featuredProductsHeader.isDisplayed()).toBe(true);
+  });
 });
-
-
