@@ -1,3 +1,5 @@
+import { chrome } from './browsers.capabilities';
+
 exports.config = {
   //
   // ====================
@@ -21,6 +23,11 @@ exports.config = {
   // will be called from there.
   //
   specs: ['./test/specs/**/*.js'],
+
+  suites: {
+    template: ['./test/specs/templateSpec/example.fbn.js'],
+    newTests: [],
+  },
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -47,16 +54,7 @@ exports.config = {
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
-  capabilities: [
-    {
-      maxInstances: 5,
-      browserName: 'chrome',
-      'goog:chromeOptions': {
-        args: ['--headless', '--window-size=1920,1080'],
-      },
-      acceptInsecureCerts: true,
-    },
-  ],
+  capabilities: [chrome],
   //
   // ===================
   // Test Configurations
