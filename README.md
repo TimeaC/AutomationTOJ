@@ -30,7 +30,7 @@ yarn install
 
 ## 📔 Notes
 
-- if you are using `Visual Studio Code` as your IDE, please consider installing the following extensions to make your life easier: `GitLens`, `Path Autocomplete`, `Rainbow Brackets`, 'vscode-icons'.
+- if you are using `Visual Studio Code` as your IDE, please consider installing the following extensions to make your life easier: `GitLens`, `Path Autocomplete`, `Rainbow Brackets`, `vscode-icons`.
 
 ### Commands to run tests
 
