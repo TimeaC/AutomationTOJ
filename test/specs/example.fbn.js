@@ -1,10 +1,13 @@
-import { PageObject } from '../pageobjects/pageObject';
+import { MainPage } from '../pageobjects/mainPage';
 
 describe('FBN landing page', () => {
-  const landingPage = new PageObject();
+  const landingPage = new MainPage();
 
-  it('Should verify that all expected elements are displayed', async () => {
-    browser.url('https://www.fbn.com/');
+  beforeAll(async () => {
+    await browser.url('https://www.fbn.com/');
+  });
+
+  it('Should verify that the Featured Products header is displayed', async () => {
     await (await landingPage.featuredProductsHeader).waitForDisplayed();
     expect(await landingPage.featuredProductsHeader.isDisplayed()).toBe(true);
   });
