@@ -1,4 +1,4 @@
-import { MainPage } from '../pageobjects/mainPage';
+import { MainPage } from '../../pageobjects/mainPage';
 
 describe('FBN landing page', () => {
   const landingPage = new MainPage();
@@ -9,6 +9,9 @@ describe('FBN landing page', () => {
 
   it('Should verify that the Featured Products header is displayed', async () => {
     await (await landingPage.featuredProductsHeader).waitForDisplayed();
-    expect(await landingPage.featuredProductsHeader.isDisplayed()).toBe(true);
+
+    expect(await landingPage.featuredProductsHeader.isDisplayed())
+      .withContext('Feature Products header was not displayed')
+      .toBe(true);
   });
 });

@@ -35,12 +35,13 @@ yarn install
 ### Commands to run tests
 
 ```
-yarn test
+yarn test <suite>
 ```
 
 Summary of command line arguments:
 
 `yarn test` -> the script used to run tests using the local config file, which is `wdio.conf.js`.
+`suite` -> can be `template` or `newTests`, check wdio.confs.js for suites structure
 
 ### WDIO
 
